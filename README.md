@@ -88,30 +88,22 @@ Combination of both techniques to maximize variability in the training data.
 
 ---
 
-## Results Summary
+## Results Summary (Mel-spectrograms)
 
-The following table summarizes the **best validation results** obtained for each relevant configuration:
+| Model / Configuration | Train Acc. | Val. Acc. | Val. Loss |
+|---|---:|---:|---:|
+| Basic CNN (Mel) | 0.87 | 0.7856 | 0.9319 |
+| Basic CNN + Dropout | 0.74 | 0.7744 | 0.8642 |
+| RNN BiLSTM | 0.93 | 0.9058 | 0.3116 |
+| RNN BiGRU | 0.94 | 0.9199 | 0.2744 |
+| Deep CNN | 0.97 | 0.9343 | 0.2426 |
+| CNN + BiGRU | 0.97 | 0.9530 | 0.1934 |
+| CNN + BiGRU + SpecAugment | 0.9079 | 0.9588 | 0.1464 |
+| CNN + BiGRU + Random Erasing | **0.8561** | **0.9593** | 0.1493 |
+| CNN + BiGRU + SpecAugment + Random Erasing | 0.7542 | 0.9519 | 0.1670 |
+| CNN–BiGRU + Integrated Augmentation | 0.9497 | 0.9497 | 0.1785 |
+| Conformer (CNN + Self-Attention) | 0.9693 | 0.9261 | 0.2814 |
 
-```latex
-\begin{table}[H]
-\centering
-\caption{Resumen global de resultados (Mel-spectrograms)}
-\label{tab:global_results}
-\begin{tabular}{lccc}
-\toprule
-\textbf{Modelo} & \textbf{Train Acc.} & \textbf{Val. Acc.} & \textbf{Val. Loss} \\
-\midrule
-CNN básico & 0.80 & 0.72 & 1.07 \\
-CNN + Dropout & 0.74 & 0.77 & 0.87 \\
-RNN BiLSTM & 0.93 & 0.91 & 0.31 \\
-RNN BiGRU & 0.95 & 0.92 & 0.28 \\
-CNN profundo & 0.97 & 0.93 & 0.24 \\
-CNN + BiGRU & 0.98 & 0.95 & 0.20 \\
-CNN + BiGRU + SpecAugment & 0.91 & 0.96 & 0.15 \\
-CNN + BiGRU + Random Erasing & 0.86 & 0.96 & 0.15 \\
-CNN + BiGRU + Aug. integrado & 0.96 & 0.95 & 0.18 \\
-Conformer & 0.97 & 0.93 & 0.28 \\
-\bottomrule
-\end{tabular}
-\end{table}
+**Best model:** **CNN + BiGRU + Random Erasing**, achieving **95.93%** validation accuracy.
+
 
